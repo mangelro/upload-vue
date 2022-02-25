@@ -68,7 +68,7 @@ export default {
       acceptedFiles: this.acceptedFiles,
       autoProcessQueue: false, //se necesita llamar explicitamente a .processQueue() para subir los ficheros.)
 
-      headers:{'x-api-version':'1.0'},
+      //headers:{'x-api-version':'1.0'},
 
       //Mensajes importados
       ...msg, 
@@ -88,7 +88,7 @@ export default {
      *  nombre de los ficheros en subidas multiples
      */
     _trickParamName() {
-      return this.maxFiles > 1? "Files":"File"
+      return this.maxFiles > 1? "files":"file"
     },
     /**
      * 

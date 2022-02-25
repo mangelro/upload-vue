@@ -1,14 +1,21 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+
+<!--http://localhost:41321/files-->
+<!---->
+
 <div class="container">
   <div class="row">
     <div class="col s12">
-      <drop-zone url="http://localhost:41321/files" :maxFiles="3"  
+      <drop-zone url="http://localhost:50443/v2/upload" :maxFiles="3"  
         @uploading-completed="onFileUploadingCompleted">
+        
         <template #input={files}>
           <div>
+            
             <input type="text" name="title">
             <input type="text" name="version"> 
+            
             <!--input hidden con el message digest-->
             <input type="hidden" name="md" v-for="(f,i) in files" :key="i"  :value="f.md">
           </div>
@@ -22,6 +29,8 @@
             </nav>
           </div>
         </template>
+
+
       </drop-zone>
     </div>
   </div>
